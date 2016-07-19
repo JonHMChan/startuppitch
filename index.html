@@ -45,7 +45,10 @@
     <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <script type="text/javascript">
       $("span").blur(function() {
-        $(this).css("color", "#666")
+        $(this).css("color", "#666");
+        if ($(this).html().length === 0) {
+          $(this).html("     ";)
+        }
       }).keyup(function() {
         var length =  $(this).html().length;
         if (length <= 80) {
